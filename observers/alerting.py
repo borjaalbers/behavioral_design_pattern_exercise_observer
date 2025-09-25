@@ -23,5 +23,6 @@ class HeatAlert(Observer):
         - Format temperature to 1 decimal place (.1f)
         - Call self.notifier.send(message) to send the alert
         """
-        # TODO: Your implementation here
-        pass
+        if data.temperature_c >= self.threshold_c:
+            message = f"Heat alert: {data.temperature_c:.1f}°C"
+            self.notifier.send(message)

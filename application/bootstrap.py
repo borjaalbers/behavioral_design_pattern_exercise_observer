@@ -23,9 +23,8 @@ def build_weather_system() -> WeatherStation:
     display = CurrentConditionsDisplay()
     heat_alert = HeatAlert(PrintNotifier(), threshold_c=30.0)
 
-    # TODO: Attach observers to the station
-    # Hint: Use station.attach(observer) for each observer
-    # station.attach(display)
-    # station.attach(heat_alert)
+    # Attach observers to the station
+    station.attach(display)
+    station.attach(heat_alert)
 
     return station
